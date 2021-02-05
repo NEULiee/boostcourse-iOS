@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D801DFC925CD1E7C0047F59E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D801DFC825CD1E7C0047F59E /* SecondViewController.swift */; };
 		D844E1CF25CAD01400756B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844E1CE25CAD01400756B59 /* AppDelegate.swift */; };
 		D844E1D125CAD01400756B59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844E1D025CAD01400756B59 /* SceneDelegate.swift */; };
 		D844E1D325CAD01400756B59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844E1D225CAD01400756B59 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D801DFC825CD1E7C0047F59E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D844E1CB25CAD01300756B59 /* ViewTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D844E1CE25CAD01400756B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D844E1D025CAD01400756B59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				D844E1D725CAD01400756B59 /* Assets.xcassets */,
 				D844E1D925CAD01400756B59 /* LaunchScreen.storyboard */,
 				D844E1DC25CAD01400756B59 /* Info.plist */,
+				D801DFC825CD1E7C0047F59E /* SecondViewController.swift */,
 			);
 			path = ViewTransition;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D801DFC925CD1E7C0047F59E /* SecondViewController.swift in Sources */,
 				D844E1D325CAD01400756B59 /* ViewController.swift in Sources */,
 				D844E1CF25CAD01400756B59 /* AppDelegate.swift in Sources */,
 				D844E1D125CAD01400756B59 /* SceneDelegate.swift in Sources */,
