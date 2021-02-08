@@ -9,8 +9,18 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.nameLabel.text = UserInformation.shared.name
+        self.ageLabel.text = UserInformation.shared.age
     }
     
     override func didReceiveMemoryWarning() {
