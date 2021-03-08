@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // full screen으로 바꾸기
+    
     // MARK:- Properites
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!

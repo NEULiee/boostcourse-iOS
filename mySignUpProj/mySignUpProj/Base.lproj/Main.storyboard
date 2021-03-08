@@ -65,6 +65,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z6E-sv-Pv7" secondAttribute="trailing" constant="90" id="pAc-Ix-eul"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="idTextField" destination="qpi-OM-PiJ" id="aAp-vh-1k3"/>
+                        <outlet property="passwordTextField" destination="Z6E-sv-Pv7" id="xxB-Ch-ULO"/>
+                        <outlet property="signInButton" destination="osU-vg-oQD" id="1zr-1N-pCH"/>
+                        <outlet property="signUpButton" destination="H2d-Bo-RAd" id="r5V-wE-Clq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,11 +90,18 @@
                                     <color key="titleColor" systemColor="systemRedColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYC-EL-WuE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYC-EL-WuE">
                                 <rect key="frame" x="292" y="758" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" name="AccentColor"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" systemColor="opaqueSeparatorColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bfk-Kw-2ff" kind="show" id="rEI-T3-jYA"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X63-31-6cy">
                                 <rect key="frame" x="16" y="150" width="382" height="598"/>
@@ -110,7 +123,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Check Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UrC-49-hd1">
                                 <rect key="frame" x="150" y="104" width="248" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N6L-Ag-SHI">
                                 <rect key="frame" x="16" y="16" width="124" height="124"/>
@@ -146,6 +159,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DTj-vA-8nO"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="LaG-03-7KT" id="Ns1-Gm-XpV"/>
+                        <outlet property="checkPasswordTextField" destination="UrC-49-hd1" id="pSc-wO-HKp"/>
+                        <outlet property="idTextField" destination="y03-Iw-IOh" id="POa-Po-rbG"/>
+                        <outlet property="introduceTextView" destination="X63-31-6cy" id="wyX-dD-hNX"/>
+                        <outlet property="nextButton" destination="QYC-EL-WuE" id="fu0-c1-EBP"/>
+                        <outlet property="passwordTextField" destination="njJ-Ak-IqB" id="8GD-hM-6W1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEu-22-Vlm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,7 +177,7 @@
             <objects>
                 <viewController id="bfk-Kw-2ff" customClass="ThirdViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rsp-Ve-lvO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L4u-aB-AEb">
@@ -227,6 +248,9 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
