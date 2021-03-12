@@ -19,13 +19,13 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate, UIIma
     @IBOutlet weak var nextButton: UIButton!
     var chooseImage: Bool = false
     
-    // MARK:- Methods
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNextDisabled()
 
+        
         let tapImageViewGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.presentImagePicker(_:)))
-        // tapImageViewGesture.delegate = self
         self.imageView.addGestureRecognizer(tapImageViewGesture)
         imageView.isUserInteractionEnabled = true
         
@@ -35,15 +35,17 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate, UIIma
         // Do any additional setup after loading the view.
     }
     
+    // MARK:- Methods
     func setNextDisabled() {
         nextButton.isEnabled = false
     }
     
-    func inputUserInformation() {
-        UserInformation.shared.id = idTextField.text
-        UserInformation.shared.password = passwordTextField.text
-        UserInformation.shared.checkPassword = checkPasswordTextField.text
-        UserInformation.shared.textView = introduceTextView.text
+    func insertUserInformation() {
+        UserInformation.shared.insertInformation(id: idTextField.text!, password: passwordTextField.text!, textView: introduceTextView.text!)
+    }
+    
+    func checkCondition() -> Bool {
+        return self.idTextField.text != "" && self.passwordTextField.text != "" && self.checkPasswordTextField.text != "" && self.introduceTextView.text != "" && chooseImage
     }
     
     // MARK: IBAction
@@ -52,7 +54,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate, UIIma
         self.dismiss(animated: true, completion: nil)
     }
 
-    // tap gesture를 imagePicker에 추가하는 방법
     @objc func presentImagePicker(_ gesture: UITapGestureRecognizer) {
         let imagePicker: UIImagePickerController = {
             let picker: UIImagePickerController = UIImagePickerController()
@@ -65,18 +66,18 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate, UIIma
     }
     
     // MARK: UIGestureRecognizerDelegate
-    // If all information writed, enable next button
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         self.view.endEditing(true)
-        inputUserInformation()
-        if ((UserInformation.shared.id?.isEmpty) == false) && ((UserInformation.shared.password?.isEmpty) == false) && ((UserInformation.shared.checkPassword?.isEmpty) == false) && ((UserInformation.shared.textView?.isEmpty) == false && chooseImage) {
-            if (UserInformation.shared.password == UserInformation.shared.checkPassword) {
+        if  checkCondition() {
+            if self.passwordTextField.text == self.checkPasswordTextField.text {
                 nextButton.isEnabled = true
+                insertUserInformation()
             }
         }
         else {
             nextButton.isEnabled = false
         }
+        
         return true
     }
     
@@ -90,27 +91,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate, UIIma
             self.imageView.image = editedImage
             chooseImage = true
         }
-        /*
-        else if let cropImage: UIImage = info[UIImagePickerController.InfoKey.cropRect] as? UIImage {
-            self.imageView.image = cropImage
-        }
-        */
-        /*
-        else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.imageView.image = possibleImage // 원본 이미지가 있을 경우
-        }
-        */
         self.dismiss(animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

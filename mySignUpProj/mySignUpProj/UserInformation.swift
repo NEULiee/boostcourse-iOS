@@ -12,6 +12,19 @@ class UserInformation {
     
     var id: String?
     var password: String?
-    var checkPassword: String?
     var textView: String?
+    
+    func insertInformation(id: String?, password: String?, textView: String?) {
+        self.id = id
+        self.password = password
+        self.textView = textView
+    }
+    
+    func deleteInformation() {
+        self.id = nil
+        self.password = nil
+        self.textView = nil
+    }
+    
+    private init() {}
 }
