@@ -23,7 +23,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate, UIIma
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNextDisabled()
-
         
         let tapImageViewGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.presentImagePicker(_:)))
         self.imageView.addGestureRecognizer(tapImageViewGesture)
